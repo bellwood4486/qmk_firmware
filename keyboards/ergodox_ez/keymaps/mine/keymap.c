@@ -15,9 +15,11 @@
 #define A(kc) LALT(kc)
 #define SC(kc) (S(C(kc)))
 #define SA(kc) (S(A(kc)))
+#define CT(kc) LCTL_T(kc)
 #define CC_EN LT(SYMB,KC_MHEN)
 #define CC_JA LT(SYMB,KC_HENK)
 #define CC_ALTTAB LALT(KC_TAB)
+
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -33,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * |  Tab   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|  Ins |           | PstSc|------+------+------+------+------+--------|
- * |  Ctrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
+ * |Ctrl/Esc|   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | Shift  |   Z  |   X  |   C  |   V  |   B  |  EN  |           |  JA  |   N  |   M  |   ,  |   .  |   /  | Shift  |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -53,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         KC_EQL,      KC_1,       KC_2,       KC_3,       KC_4,       KC_5,      _______,
         KC_TAB,      KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,      KC_INS,
-        KC_LCTL,     KC_A,       KC_S,       KC_D,       KC_F,       KC_G,
+        CT(KC_ESC),  KC_A,       KC_S,       KC_D,       KC_F,       KC_G,
         KC_LSFT,     KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,      CC_EN,
         XXXXXXX,     KC_GRV,     CC_ALTTAB,  KC_LEFT,    KC_RGHT,
                                                                      KC_LALT,   KC_ESC,
